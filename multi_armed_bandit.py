@@ -18,6 +18,10 @@ def get_num_slot_machines():
 
 def use_machine(machine, bet):
     machine = machines[machine]
-    return int(bet * r.normalvariate(machine[0], machine[1]))
+    ret = int(bet * r.normalvariate(machine[0], machine[1]))
+    if ret > 0:
+        return ret
+    else:
+        return 0
 
 
